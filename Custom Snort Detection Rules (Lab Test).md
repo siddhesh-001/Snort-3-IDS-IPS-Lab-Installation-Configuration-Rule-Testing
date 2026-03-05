@@ -10,7 +10,7 @@ These rules are stored in:
 
 ---
 
-# 1️⃣ ICMP Echo Flood Detection
+# 1️. ICMP Echo Flood Detection
 
 Detects repeated ICMP echo requests that may indicate a **ping flood attack**.
 
@@ -27,7 +27,7 @@ detection_filter:track by_src, count 10, seconds 5; sid:10000001; rev:1;)
 
 ---
 
-# 2️⃣ Oversized ICMP Packet Detection
+# 2️. Oversized ICMP Packet Detection
 
 Detects abnormally large ICMP packets that may indicate **malformed traffic or attack traffic**.
 
@@ -44,7 +44,7 @@ detection_filter:track by_src, count 10, seconds 5; sid:10000002; rev:2;)
 
 ---
 
-# 3️⃣ TCP SYN Port Scan Detection
+# 3️. TCP SYN Port Scan Detection
 
 Detects TCP SYN packets commonly used during **port scanning activities**.
 
@@ -68,7 +68,7 @@ nmap -sS <snort_vm_ip>
 
 ---
 
-# 4️⃣ Known Malicious IP Detection (Inbound)
+# 4️. Known Malicious IP Detection (Inbound)
 
 Detects inbound connections from known malicious IP addresses.
 
@@ -84,7 +84,7 @@ alert ip <Input MALICIOUS IP> any -> $HOME_NET any \
 
 ---
 
-# 5️⃣ Known Malicious IP Detection (Outbound)
+# 5️. Known Malicious IP Detection (Outbound)
 
 Detects connections from internal hosts to known malicious infrastructure.
 
@@ -100,7 +100,7 @@ alert ip $HOME_NET any -> <Input MALICIOUS IP> any \
 
 ---
 
-# 6️⃣ Malicious DNS Query Detection
+# 6️. Malicious DNS Query Detection
 
 Detects DNS queries for a suspicious or malicious domain.
 
@@ -116,7 +116,7 @@ alert udp $HOME_NET any -> any 53 \
 
 ---
 
-# 7️⃣ Malicious DNS Response Detection
+# 7️. Malicious DNS Response Detection
 
 Detects inbound DNS responses associated with a suspicious domain.
 
