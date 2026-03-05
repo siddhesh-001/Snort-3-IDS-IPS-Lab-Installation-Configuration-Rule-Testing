@@ -54,9 +54,8 @@ Action Triggered
 |----------|-------------|
 | OS | Kali Linux (Virtual Machine) |
 | IDS Tool | Snort 3 |
-| Network Analysis | Wireshark |
 | Attack Simulation | Ping / Nmap |
-| Virtualization | VirtualBox / VMware |
+| Virtualization | VMware |
 
 ---
 
@@ -68,6 +67,8 @@ Update system packages.
 sudo apt-get update
 sudo apt-get upgrade
 ```
+<img width="669" height="171" alt="01_Update_pakage_list" src="https://github.com/user-attachments/assets/e57e7313-8957-40e2-91d0-5b05213030fe" />
+
 
 Install required dependencies for compiling Snort:
 
@@ -78,6 +79,8 @@ liblzma-dev openssl libssl-dev pkg-config cmake cpputest libsqlite3-dev \
 uuid-dev libcmocka-dev libnetfilter-queue-dev libmnl-dev autotools-dev \
 libunwind-dev git
 ```
+<img width="633" height="549" alt="02_installing dependencies" src="https://github.com/user-attachments/assets/617596de-de0d-4c81-87d7-71530f498e43" />
+
 
 ---
 
@@ -152,6 +155,8 @@ Configure the build:
 ```bash
 ./configure_cmake.sh --prefix=/usr/local --enable-tcmalloc
 ```
+<img width="1350" height="612" alt="Run the CMake configuration script(detects libdaq and tcmalloc)_4" src="https://github.com/user-attachments/assets/5869dbec-f559-42f4-8ef0-567a9ee1b286" />
+
 
 Compile Snort:
 
@@ -172,6 +177,8 @@ Verify installation:
 ```bash
 snort -V
 ```
+<img width="537" height="284" alt="image" src="https://github.com/user-attachments/assets/ef5e50eb-f53b-45d3-bf6e-c079c3038891" />
+
 
 Expected output should display **Snort++ (Snort 3)** version information.
 
