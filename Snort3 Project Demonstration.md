@@ -295,6 +295,12 @@ This rule alerts when an **external host sends a ping request** to the protected
 
 Modify the detection section inside `snort.lua`.
 
+Open the Snort configuration file:
+
+```bash
+sudo nano /usr/local/etc/snort/snort.lua
+```
+
 ```
 ips =
 {
