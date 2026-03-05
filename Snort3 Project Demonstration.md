@@ -16,7 +16,7 @@ This project simulates how **security analysts deploy and test intrusion detecti
 
 ---
 
-# 📌 Project Overview
+#  Project Overview
 
 Snort is an open-source **network intrusion detection and prevention system** that inspects network traffic and compares packets against defined detection rules.
 
@@ -29,7 +29,7 @@ It can operate in two modes:
 
 ---
 
-# 🔎 How Snort Works
+#  How Snort Works
 
 Snort analyzes network traffic using a rule-based detection engine.
 
@@ -59,7 +59,7 @@ Action Triggered
 
 ---
 
-# ⚙️ Step 1 — System Preparation
+#  Step 1 — System Preparation
 
 Update system packages.
 
@@ -86,7 +86,7 @@ libunwind-dev git
 
 ---
 
-# 📦 Step 2 — Install DAQ Library
+#  Step 2 — Install DAQ Library
 
 Snort requires the **Data Acquisition Library (DAQ)** for packet capture.
 
@@ -117,7 +117,7 @@ ldconfig -p | grep daq
 
 ---
 
-# ⚡ Step 3 — Install TCMalloc (Performance Optimization)
+#  Step 3 — Install TCMalloc (Performance Optimization)
 
 Install Google's high-performance memory allocator.
 
@@ -140,7 +140,7 @@ This improves **Snort memory performance**.
 
 ---
 
-# 🧱 Step 4 — Compile and Install Snort 3
+#  Step 4 — Compile and Install Snort 3
 
 Remove any preinstalled Snort packages.
 
@@ -191,7 +191,7 @@ Expected output should display **Snort++ (Snort 3)** version information.
 
 ---
 
-# 🌐 Step 5 — Configure Network Interface
+#  Step 5 — Configure Network Interface
 
 Identify the network interface:
 
@@ -271,7 +271,7 @@ This ensures the NIC configuration is **automatically applied when the system bo
 
 ---
 
-# 🔧 Step 6 — Configure Snort
+#  Step 6 — Configure Snort
 
 Open the configuration file:
 
@@ -295,7 +295,7 @@ These variables allow Snort to distinguish **trusted and untrusted traffic**.
 
 ---
 
-# 🧾 Step 7 — Create Custom Detection Rules
+#  Step 7 — Create Custom Detection Rules
 
 Create rules directory:
 
@@ -326,7 +326,7 @@ This rule alerts when an **external host sends a ping request** to the protected
 
 ---
 
-# 🔗 Step 8 — Load Custom Rules
+#  Step 8 — Load Custom Rules
 
 Modify the detection section inside `snort.lua`.
 
@@ -364,7 +364,7 @@ snort -c /usr/local/etc/snort/snort.lua
 
 ---
 
-# 🚀 Step 9 — Run Snort
+#  Step 9 — Run Snort
 
 ```bash
 sudo snort -c /usr/local/etc/snort/snort.lua -i eth0 -A alert_fast
@@ -377,7 +377,7 @@ Snort now begins **monitoring network traffic in IDS mode**.
 
 ---
 
-# 🧪 Step 10 — Test the Detection Rule
+#  Step 10 — Test the Detection Rule
 
 From another virtual machine:
 
@@ -401,7 +401,7 @@ This confirms that the **custom detection rule is working**.
 
 ---
 
-# 🔍 Additional Detection Rules
+#  Additional Detection Rules
 
 ## Telnet Connection Attempt Detection
 
@@ -428,7 +428,7 @@ nmap -sS <snort_vm_ip>
 
 ---
 
-# 🎯 Key Learning Outcomes
+# Outcomes
 
 Through this project I learned how to:
 
@@ -440,11 +440,10 @@ Through this project I learned how to:
 
 ---
 
-# 📚 Skills Demonstrated
+#  Skills Demonstrated
 
 - Network Security Monitoring
 - Intrusion Detection Systems
 - Rule-Based Detection
-- Packet Inspection
 - Linux System Administration
 - Security Tool Deployment
