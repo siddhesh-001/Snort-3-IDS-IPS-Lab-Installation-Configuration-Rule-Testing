@@ -46,6 +46,7 @@ alert icmp any any -> $HOME_NET any (msg:"Possible oversized ICMP Echo Request f
 Rule used:
 
 alert tcp any any -> $HOME_NET any (msg:"Possible TCP SYN port scan detected"; flags:S; flow:to_server; detection_filter:track by_src, count 20, seconds 3; sid:10000003; rev:1;)
+
 -Detecting TCP port scans (flags:S), whch scans the ports on server (flow:to_server)
 
 -	Attacking from different VM
@@ -59,6 +60,7 @@ alert tcp any any -> $HOME_NET any (msg:"Possible TCP SYN port scan detected"; f
 ---
 
 # 4.	**Any outbound and inbound malicious ip communication**
+
 Rule used:
 **For Outbound ip Communication**
 
@@ -67,6 +69,7 @@ alert ip $HOME_NET any -> 192.168.217.129 any (msg:"Outbound connection to known
 **For Inbound ip Communication**
 
 alert ip 192.168.217.129 any -> $HOME_NET any (msg:"Inbound connection from known malicious IP"; sid:10000051; rev:1;)
+
 -Separately made rules for outbound and inbound ip communication
 
 -	Started another VM and assumed it malicious and tried to communicate to snort machine
@@ -80,6 +83,7 @@ alert ip 192.168.217.129 any -> $HOME_NET any (msg:"Inbound connection from know
 ---
 
 # 5.	Any outbound and inbound malicious domain communication
+
 Rule used:
 **For Outbound DNS query**
 
@@ -88,6 +92,7 @@ alert udp $HOME_NET any -> any 53 (msg:"Outbound DNS query to known malicious do
 **For Inbound DNS response**
 
 alert udp any 53 -> $HOME_NET any (msg:"Inbound DNS response for known malicious domain"; content:"badexample.com"; sid:10000007; rev:1;)
+
 -	Usually, DNS carries udp protocol and DNS uses port 53
 
 -	Within the same snort machine, tried to search for a parked domain for testing
